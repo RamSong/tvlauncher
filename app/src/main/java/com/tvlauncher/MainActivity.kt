@@ -60,12 +60,11 @@ import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.stringResource
 import com.tvlauncher.model.AppInfo
 
-const val PREF_AUTO_START_APP = "auto_start_app"
-
 class MainActivity : ComponentActivity() {
     companion object {
         private const val TAG = "MainActivity"
         const val PREFS_NAME = "launcher_prefs"
+        const val PREF_AUTO_START_APP = "auto_start_app"
     }
 
     private lateinit var sharedPreferences: SharedPreferences
@@ -97,7 +96,7 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun openSettings() {
-        val intent = Intent(this, SettingsActivity::class.java)
+        val intent = Intent(this@MainActivity, SettingsActivity::class.java)
         startActivity(intent)
     }
 }
@@ -147,7 +146,7 @@ fun AppGrid(modifier: Modifier = Modifier, sharedPreferences: SharedPreferences)
                     // 设置为开机自启应用
                     selectedApp.value = app.packageName
                     with(sharedPreferences.edit()) {
-                        putString(PREF_AUTO_START_APP, app.packageName)
+                        putString(MainActivity.PREF_AUTO_START_APP, app.packageName)
                         apply()
                     }
                 }

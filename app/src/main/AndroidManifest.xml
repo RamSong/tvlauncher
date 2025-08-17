@@ -38,6 +38,18 @@
             android:name=".SettingsActivity"
             android:exported="false"
             android:label="设置" />
+            
+        <!-- 添加应用选择界面Activity -->
+        <activity
+            android:name=".AppSelectorActivity"
+            android:exported="false"
+            android:label="选择应用" />
+            
+        <!-- 添加关于界面Activity -->
+        <activity
+            android:name=".AboutActivity"
+            android:exported="false"
+            android:label="关于" />
 
         <!-- 添加开机启动广播接收器 -->
         <receiver android:name=".BootReceiver" 
