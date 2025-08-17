@@ -61,7 +61,7 @@ fun AboutScreen(modifier: Modifier = Modifier) {
         )
         
         Text(
-            text = "版本 1.1",
+            text = "版本 1.4.0",
             fontSize = 20.sp,
             modifier = Modifier.padding(bottom = 32.dp)
         )
